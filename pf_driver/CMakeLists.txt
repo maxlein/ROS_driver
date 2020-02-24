@@ -25,11 +25,14 @@ generate_dynamic_reconfigure_options(
   cfg/settings.cfg
 )
 
-
-
 catkin_package(
   INCLUDE_DIRS include
-  CATKIN_DEPENDS roscpp std_msgs sensor_msgs message_runtime
+  CATKIN_DEPENDS roscpp std_msgs sensor_msgs
+)
+
+include_directories(
+  include
+  ${catkin_INCLUDE_DIRS}
 )
 
 add_executable(r2000_node src/r2000_node.cpp)
